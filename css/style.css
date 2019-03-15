@@ -1,0 +1,196 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #fafafa;
+  min-height: 100%;
+  font-family: "Arial", sans-serif;
+}
+
+.wrap {
+  position: relative;
+  height: 100%;
+  min-height: 300px;
+  padding-bottom:20px;
+}
+
+.game {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 400px;
+          perspective: 400px;
+  min-height: 100%;
+  height: 100%;
+}
+
+@-webkit-keyframes matchAnim {
+  0% {
+    background: #bcffcc;
+  }
+  100% {
+    background: white;
+  }
+}
+
+@keyframes matchAnim {
+  0% {
+    background: #bcffcc;
+  }
+  100% {
+    background: #fafafa;
+  }
+}
+.card {
+  float: left;
+  width: 23.66666%;
+  height: 25%;
+  padding: 5px;
+  text-align: center;
+  display: block;
+  -webkit-perspective: 400px;
+          perspective: 400px;
+  position: relative;
+  cursor: pointer;
+  z-index: 50;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+@media (max-width: 800px) {
+  .card {
+    width: 25%;
+    height: 16.666%;
+  }
+}
+.card .inside {
+  width: 100%;
+  height: 100%;
+  display: block;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  transition: .4s ease-in-out;
+  background: #fafafa;
+}
+.card .inside.picked, .card .inside.matched {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+.card .inside.matched {
+  -webkit-animation: 1s matchAnim ease-in-out;
+          animation: 1s matchAnim ease-in-out;
+  -webkit-animation-delay: .4s;
+          animation-delay: .4s;
+}
+.card .front, .card .back {
+  border: 1px solid #ff7800;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+.card .front img, .card .back img {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+  max-height: 100%;
+}
+.card .front {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+@media (max-width: 700px) {
+  .card .front {
+    padding: 5px;
+  }
+}
+.card .back {
+  -webkit-transform: rotateX(0);
+          transform: rotateX(0);
+}
+@media (max-width: 700px) {
+  .card .back {
+    padding: 10px;
+  }
+}
+
+.modal-overlay {
+  display: none;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modal {
+  display: none;
+  position: relative;
+  width: 400px;
+  height: 300px;
+  max-height: 90%;
+  max-width: 90%;
+  min-height: 380px;
+  margin: 0 auto;
+  background: white;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  padding: 30px 10px;
+}
+.modal .winner {
+  font-size: 40px;
+  text-align: center;
+  font-family: "Anton", sans-serif;
+  color: darkolivegreen;
+  text-shadow: 0px 3px 0 black;
+    padding: 0;
+    margin: 0;
+}
+@media (max-width: 380px) {
+  .modal .winner {
+    font-size: 40px;
+       padding: 0;
+    margin: 0;
+  }
+}
+.modal .restart {
+  font-family: "Anton", sans-serif;
+  margin: 20px auto;
+  padding: 20px 30px;
+  display: block;
+  font-size: 20px;
+  border: none;
+  background: #4d4d4d;
+  background: linear-gradient(#4d4d4d, #222);
+  border: 1px solid #222;
+  border-radius: 5px;
+  color: white;
+  text-shadow: 0px 1px 0 black;
+  cursor: pointer;
+}
+.modal .restart:hover {
+  background: linear-gradient(#222, black);
+}
+.modal .message {
+  text-align: center;
+    color: forestgreen;
+}
+
+.modal .message a {
+  text-decoration: none;
+  color: #28afe6;
+  font-weight: bold;
+}
+.modal .message a:hover {
+  color: #56c0eb;
+  border-bottom: 1px dotted #56c0eb;
+}
+
