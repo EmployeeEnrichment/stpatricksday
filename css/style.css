@@ -11,6 +11,10 @@ body {
   min-height: 100%;
   font-family: "Arial", sans-serif;
 }
+a:link, a:visited { 
+  color: #e5e5e5;
+    text-decoration:none;
+}
 
 .wrap {
   position: relative;
@@ -149,7 +153,7 @@ body {
   font-size: 40px;
   text-align: center;
   font-family: "Anton", sans-serif;
-  color: darkolivegreen;
+  color: dimgrey;
   text-shadow: 0px 3px 0 black;
     padding: 0;
     margin: 0;
@@ -163,15 +167,15 @@ body {
 }
 .modal .restart {
   font-family: "Anton", sans-serif;
-  margin: 20px auto;
-  padding: 20px 30px;
+  margin: 10px auto;
+  padding: 10px 20px;
   display: block;
-  font-size: 20px;
+  font-size: 15px;
   border: none;
   background: #4d4d4d;
   background: linear-gradient(#4d4d4d, #222);
   border: 1px solid #222;
-  border-radius: 5px;
+  border-radius: 3px;
   color: white;
   text-shadow: 0px 1px 0 black;
   cursor: pointer;
@@ -181,16 +185,37 @@ body {
 }
 .modal .message {
   text-align: center;
-    color: forestgreen;
+    color: darkolivegreen;
 }
 
 .modal .message a {
   text-decoration: none;
-  color: #28afe6;
+  color: #e5e5e5;
   font-weight: bold;
 }
 .modal .message a:hover {
-  color: #56c0eb;
+  color: #e5e5e5;
   border-bottom: 1px dotted #56c0eb;
 }
 
+
+
+.modal .goback {
+  font-family: "Anton", sans-serif;
+  margin: 10px auto;
+  padding: 10px 20px;
+  display: block;
+  font-size: 15px;
+  border: none;
+  background: #4d4d4d;
+  background: linear-gradient(#4d4d4d, #222);
+  border: 1px solid #222;
+  border-radius: 3px;
+  color: white;
+  text-shadow: 0px 1px 0 black;
+  cursor: pointer;
+}
+
+.modal .goback:hover {
+  background: linear-gradient(#222, black);
+}
